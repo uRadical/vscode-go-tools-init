@@ -1,0 +1,82 @@
+{
+  "name": "vscode-go-tools-init",
+  "displayName": "Go Tools Init",
+  "description": "Scaffold VSCode integration files (shims, alternateTools, tasks) for Go 1.24+ tool directives in go.mod.",
+  "version": "0.1.0",
+  "publisher": "uradical",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Other"
+  ],
+  "keywords": [
+    "go",
+    "golang",
+    "go tool",
+    "golangci-lint",
+    "goimports"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uRadical/vscode-go-tools-init.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uRadical/vscode-go-tools-init/issues"
+  },
+  "homepage": "https://github.com/uRadical/vscode-go-tools-init#readme",
+  "qna": "marketplace",
+  "icon": "icon.png",
+  "activationEvents": [
+    "workspaceContains:**/go.mod"
+  ],
+  "main": "./out/extension.js",
+  "extensionKind": [
+    "workspace"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "goToolsInit.init",
+        "title": "Init Go Project",
+        "category": "Go Tools"
+      },
+      {
+        "command": "goToolsInit.clean",
+        "title": "Clean Generated Integration",
+        "category": "Go Tools"
+      }
+    ],
+    "configuration": {
+      "title": "Go Tools Init",
+      "properties": {
+        "goToolsInit.ignore": {
+          "type": "boolean",
+          "default": false,
+          "description": "Suppress the automatic prompt to set up VSCode integration for Go tool directives in this workspace. The 'Init Go Project' command ignores this flag."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "npm run test:unit",
+    "test:unit": "mocha",
+    "test:integration": "npm run compile && vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "mocha": "^10.8.2",
+    "typescript": "^5.4.0"
+  }
+}

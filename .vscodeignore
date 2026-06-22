@@ -1,0 +1,25 @@
+# Sources & build inputs (only out/*.js is shipped)
+src/**
+**/tsconfig.json
+**/*.ts
+**/*.map
+
+# Compiled tests — never ship these (out/extension.js + out/core.js are kept)
+out/test/**
+
+# Test & tooling config
+.vscode/**
+.vscode-test/**
+.vscode-test.mjs
+.mocharc.json
+
+# Repo-only material
+.claude/**
+assets/**
+test-fixtures/**
+.github/**
+.git/**
+.gitignore
+.vscodeignore
+node_modules/**
+package-lock.json

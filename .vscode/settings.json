@@ -1,0 +1,4 @@
+{
+  "// goToolsInit.ignore": "This repo ships fixture go.mod files with tool directives under test-fixtures/. Suppress the auto-prompt when developing the extension itself.",
+  "goToolsInit.ignore": true
+}

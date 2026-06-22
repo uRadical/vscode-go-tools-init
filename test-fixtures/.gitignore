@@ -1,0 +1,10 @@
+# Extension output (created when you run "Set up" in the Dev Host)
+**/.tools/
+**/.vscode/
+
+# Resolved dependency state. The committed go.mod files are minimal (tool
+# directives only); the extension only reads that text. Actually *running* a tool
+# — especially golangci-lint — pulls its full dependency tree into go.sum (and
+# bloats go.mod with hundreds of indirect requires). That's local, throwaway
+# state for Level-2 testing only; never commit it. Run ./setup.sh to regenerate.
+**/go.sum
